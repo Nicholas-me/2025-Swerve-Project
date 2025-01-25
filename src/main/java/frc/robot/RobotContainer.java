@@ -33,7 +33,8 @@ public class RobotContainer {
 
     private final Telemetry logger = new Telemetry(MaxSpeed);
 
-    private final CommandXboxController driverdriverJoystick = new CommandXboxController(0);
+    private final CommandXboxController driverJoystick = new CommandXboxController(0);
+    private final CommandXboxController operatorJoystick = new CommandXboxController(1);
 
     public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
 
@@ -47,7 +48,7 @@ public class RobotContainer {
         drivetrain.setDefaultCommand(
             // Drivetrain will execute this command periodically
             drivetrain.applyRequest(() ->
-                drive.withVelocityX(-driverdriverJoystick.getLeftY() * MaxSpeed * SlowMoDrive) // Drive forward with negative Y (forward)
+                drive.withVelocityX(-driverJoystick.getLeftY() * MaxSpeed * SlowMoDrive) // Drive forward with negative Y (forward)
                     .withVelocityY(-driverJoystick.getLeftX() * MaxSpeed * SlowMoDrive) // Drive left with negative X (left)
                     .withRotationalRate(-driverJoystick.getRightX() * MaxAngularRate * SlowMoTurn) // Drive counterclockwise with negative X (left)
             )
