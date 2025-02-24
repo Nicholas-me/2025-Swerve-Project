@@ -29,7 +29,7 @@ import frc.robot.Constants.AlgaeSubsystemConstants;
 import frc.robot.Constants.SimulationRobotConstants;
 import frc.robot.Configs;
 
-public class AlgaeSubsystem extends SubsystemBase {
+ public class AlgaeSubsystem extends SubsystemBase{
   // Initialize arm SPARK. We will use MAXMotion position control for the arm, so we also need to
   // initialize the closed loop controller and encoder.
   private SparkFlex armMotor =
