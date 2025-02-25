@@ -22,8 +22,8 @@ public class RobotContainer {
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
 
-    private double SlowMoDrive = 0.25; // Increase this from 0 to 1 with 1 being full speed driving
-    private double SlowMoTurn = 0.25; // Increase this from 0 to 1 with 1 being full speed turning
+    private double SlowMoDrive = 0.1; // Increase this from 0 to 1 with 1 being full speed driving
+    private double SlowMoTurn = 0.1; // Increase this from 0 to 1 with 1 being full speed turning
     
     /* Setting up bindings for necessary control of the swerve drive platform */
     private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
