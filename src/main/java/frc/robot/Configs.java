@@ -1,18 +1,22 @@
 package frc.robot;
 
+
 import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.LimitSwitchConfig.Type;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkFlexConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
-import frc.robot.Constants.ModuleConstants;
 
 public final class Configs {
+  /*
   public static final class MAXSwerveModule {
     public static final SparkFlexConfig drivingConfig = new SparkFlexConfig();
     public static final SparkMaxConfig turningConfig = new SparkMaxConfig();
 
+    
     static {
+
+      
       // Use module constants to calculate conversion factors and feed forward gain.
       double drivingFactor =
           ModuleConstants.kWheelDiameterMeters * Math.PI / ModuleConstants.kDrivingMotorReduction;
@@ -53,7 +57,8 @@ public final class Configs {
           .positionWrappingEnabled(true)
           .positionWrappingInputRange(0, turningFactor);
     }
-  }
+  } 
+  */
 
   public static final class CoralSubsystem {
     public static final SparkMaxConfig armConfig = new SparkMaxConfig();

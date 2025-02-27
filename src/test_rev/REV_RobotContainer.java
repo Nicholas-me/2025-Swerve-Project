@@ -34,7 +34,7 @@ import java.util.List;
  * periodic methods (other than the scheduler calls).  Instead, the structure of the robot
  * (including subsystems, commands, and button mappings) should be declared here.
  */
-public class RobotContainer {
+public class REV_RobotContainer {
   // The robot's subsystems
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
   private final CoralSubsystem m_coralSubSystem = new CoralSubsystem();
@@ -45,7 +45,7 @@ public class RobotContainer {
       new CommandXboxController(OIConstants.kDriverControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {
+  public REV_RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
 

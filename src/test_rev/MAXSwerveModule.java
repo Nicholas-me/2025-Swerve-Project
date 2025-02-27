@@ -4,6 +4,9 @@
 
 package frc.robot.subsystems;
 
+/* TODO Eventually this entire file will be deleted.
+ I'm leaving it here for reference
+*/
 import com.revrobotics.AbsoluteEncoder;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkBase.ControlType;
