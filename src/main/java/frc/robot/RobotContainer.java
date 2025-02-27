@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;
 import frc.robot.Configs.CoralSubsystem;
+import frc.robot.commands.DriveForwardCommand;
 import frc.robot.generated.TunerConstants;
 import frc.robot.subsystems.AlgaeSubsystem;
 import frc.robot.subsystems.CommandSwerveDrivetrain;
@@ -50,7 +51,14 @@ public class RobotContainer {
 
     public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
 
+        // Autonomous commands
+        // Simple drive forward for about 2 meters for 1 seconds
+    private final DriveForwardCommand m_DriveForwardCommand = new DriveForwardCommand(drivetrain);
+
+
     public RobotContainer() {
+
+
         configureBindings();
     }
 
@@ -60,39 +68,15 @@ public class RobotContainer {
         drivetrain.setDefaultCommand(
                 // Drivetrain will execute this command periodically
                 drivetrain
-                        .applyRequest(() -> drive.withVelocityX(-m_driverController.getLeftY() * MaxSpeed * SlowMoDrive) // Drive
-                                                                                                                         // forward
-                                                                                                                         // with
-                                                                                                                         // negative
-                                                                                                                         // Y
-                                                                                                                         // (forward)
-                                .withVelocityY(-m_driverController.getLeftX() * MaxSpeed * SlowMoDrive) // Drive left
-                                                                                                        // with negative
-                                                                                                        // X (left)
-                                .withRotationalRate(-m_driverController.getRightX() * MaxAngularRate * SlowMoTurn) // Drive
-                                                                                                                   // counterclockwise
-                                                                                                                   // with
-                                                                                                                   // negative
-                                                                                                                   // X
-                                                                                                                   // (left)
+                // Drive forward with negative Y (forward)
+                        .applyRequest(() -> drive.withVelocityX(-m_driverController.getLeftY() * MaxSpeed * SlowMoDrive) 
+                        // Drive left with negative X (left)
+                                .withVelocityY(-m_driverController.getLeftX() * MaxSpeed * SlowMoDrive) 
+                                // Drive counterclockwise with negative X (left)
+                                .withRotationalRate(-m_driverController.getRightX() * MaxAngularRate * SlowMoTurn) 
                         ));
 
-        // Point wheels at command
-        /*
-         * You shouldn't need this so I'm leaving it commented out
-         * m_driverController.a().whileTrue(drivetrain.applyRequest(() ->
-         * point.withModuleDirection(new Rotation2d(-m_driverController.getLeftY(),
-         * -m_driverController.getLeftX()))
-         * ));
-         */
-
-        // Run SysId routines when holding back/start and X/Y.
-        // Note that each routine should be run exactly once in a single log.
-        // m_driverController.back().and(m_driverController.y()).whileTrue(drivetrain.sysIdDynamic(Direction.kForward));
-        // m_driverController.back().and(m_driverController.x()).whileTrue(drivetrain.sysIdDynamic(Direction.kReverse));
-        // m_driverController.start().and(m_driverController.y()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kForward));
-        // m_driverController.start().and(m_driverController.x()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kReverse));
-
+        
         // TODO Correctly bind these buttons to commands that make the robot do stuff
         // The original REV commands are still here, but some objects, variables, and
         // imnports need to be taken care of
@@ -113,31 +97,29 @@ public class RobotContainer {
         // B Button -> Elevator/Arm to human player position, set ball intake to stow
         // when idle
         /*
-        m_driverController
-                .b()
-                .onTrue(
+        m_driverController.b().onTrue(
                         m_coralSubSystem
                                 .setSetpointCommand(Setpoint.kFeederStation)
                                 .alongWith(m_algaeSubsystem.stowCommand()));
         */
 
-        // A Button -> Elevator/Arm to level 2 position
+        // Button -> Elevator/Arm to level 2 position
         // m_driverController.a().onTrue(m_coralSubSystem.setSetpointCommand(Setpoint.kLevel2));
 
-        // X Button -> Elevator/Arm to level 3 position
+        // Button -> Elevator/Arm to level 3 position
         // m_driverController.x().onTrue(m_coralSubSystem.setSetpointCommand(Setpoint.kLevel3));
 
-        // Y Button -> Elevator/Arm to level 4 position
+        // Button -> Elevator/Arm to level 4 position
         // m_driverController.y().onTrue(m_coralSubSystem.setSetpointCommand(Setpoint.kLevel4));
 
-        // Right Trigger -> Run ball intake, set to leave out when idle
+        // Trigger -> Run ball intake, set to leave out when idle
         /*
         m_driverController
                 .rightTrigger(OIConstants.kTriggerButtonThreshold)
                 .whileTrue(m_algaeSubsystem.runIntakeCommand());
         */
 
-        // Left Trigger -> Run ball intake in reverse, set to stow when idle
+        // Trigger -> Run ball intake in reverse, set to stow when idle
         /* m_driverController
                 .leftTrigger(OIConstants.kTriggerButtonThreshold)
                 .whileTrue(m_algaeSubsystem.reverseIntakeCommand());
@@ -155,9 +137,18 @@ public class RobotContainer {
     // 2. Intermediate - you can add an auto chooser here and select from a list of
     // autos.
     public Command getAutonomousCommand() {
-        return Commands.print("No autonomous command configured");
-
+        // return Commands.print("No autonomous command configured");
+        return m_DriveForwardCommand;
         
     }
 
 } // end of RobotContainer
+
+// Point wheels at command
+        /*
+         * You shouldn't need this so I'm leaving it commented out
+         * m_driverController.a().whileTrue(drivetrain.applyRequest(() ->
+         * point.withModuleDirection(new Rotation2d(-m_driverController.getLeftY(),
+         * -m_driverController.getLeftX()))
+         * ));
+         */
