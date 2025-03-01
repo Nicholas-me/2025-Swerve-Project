@@ -20,9 +20,9 @@ import edu.wpi.first.math.util.Units;
 public final class Constants {
 
   public static final class CoralSubsystemConstants {
-    public static final int kElevatorMotorCanId = 4;
-    public static final int kArmMotorCanId = 3;
-    public static final int kIntakeMotorCanId = 2;
+    public static final int kElevatorMotorCanId = 5;
+    public static final int kArmMotorCanId = 2;
+    public static final int kIntakeMotorCanId = 3;
 
     public static final class ElevatorSetpoints {
       public static final int kFeederStation = 0;
@@ -48,8 +48,8 @@ public final class Constants {
 
   public static final class AlgaeSubsystemConstants {
 
-    public static final int kPivotMotorCanId = 00; // <-- You will give this motor a unique number
-    public static final int kIntakeMotorCanId = 00; // <-- You will give this motor a unique number
+    public static final int kPivotMotorCanId = 4; // <-- You will give this motor a unique number
+    public static final int kIntakeMotorCanId = 6; // <-- You will give this motor a unique number
 
     public static final class ArmSetpoints {
       public static final double kStow = 18.5;

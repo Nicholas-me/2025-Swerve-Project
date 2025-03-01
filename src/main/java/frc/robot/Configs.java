@@ -7,6 +7,9 @@ import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkFlexConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.CoralSubsystem.Setpoint;
+
 public final class Configs {
   /*
   public static final class MAXSwerveModule {
@@ -117,6 +120,23 @@ public final class Configs {
       // Configure basic settings of the intake motor
       intakeConfig.inverted(true).idleMode(IdleMode.kBrake).smartCurrentLimit(40);
     }
+
+    public Command runIntakeCommand() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'runIntakeCommand'");
+    }
+
+    public Command reverseIntakeCommand() {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'reverseIntakeCommand'");
+    }
+
+    public Command setSetpointCommand(Setpoint kfeederstation) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setSetpointCommand'");
+    }
+
+    
   }
 
   public static final class AlgaeSubsystem {
