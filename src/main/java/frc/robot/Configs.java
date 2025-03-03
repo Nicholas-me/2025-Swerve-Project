@@ -3,6 +3,7 @@ package frc.robot;
 
 import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.LimitSwitchConfig.Type;
+import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkFlexConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
@@ -64,6 +65,25 @@ public final class Configs {
   */
 
   public static final class CoralSubsystem {
+
+    public static final SparkBaseConfig armConfig = null;
+    public static final SparkBaseConfig elevatorConfig = null;
+    public static final SparkBaseConfig intakeConfig = null;
+
+    public Command runIntakeCommand() {
+          return null;}
+
+    public Command reverseIntakeCommand() {
+          return null;
+        }
+
+    public Command setSetpointCommand(Setpoint kfeederstation) {
+          return null;
+        
+    }
+
+    
+      }  
     public static final SparkMaxConfig armConfig = new SparkMaxConfig();
     public static final SparkFlexConfig elevatorConfig = new SparkFlexConfig();
     public static final SparkMaxConfig intakeConfig = new SparkMaxConfig();
@@ -122,22 +142,20 @@ public final class Configs {
     }
 
     public Command runIntakeCommand() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'runIntakeCommand'");
+          return null;
+   
     }
 
     public Command reverseIntakeCommand() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'reverseIntakeCommand'");
+          return null;
+      
     }
 
     public Command setSetpointCommand(Setpoint kfeederstation) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setSetpointCommand'");
+          return null;
     }
 
     
-  }
 
   public static final class AlgaeSubsystem {
     public static final SparkFlexConfig intakeConfig = new SparkFlexConfig();
@@ -163,4 +181,4 @@ public final class Configs {
       intakeConfig.inverted(true).idleMode(IdleMode.kBrake).smartCurrentLimit(40);
     }
   }
-}
+ }
