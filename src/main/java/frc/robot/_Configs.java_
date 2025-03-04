@@ -1,21 +1,25 @@
 package frc.robot;
 
-// TODO These will need to be replaced with the appropriate imports for CTRE Phoenix
-/*
 import com.revrobotics.spark.config.ClosedLoopConfig.FeedbackSensor;
 import com.revrobotics.spark.config.LimitSwitchConfig.Type;
+import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 import com.revrobotics.spark.config.SparkFlexConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
-import frc.robot.Constants.ModuleConstants;
-*/
 
-public final class REV_Configs {
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.CoralSubsystem.Setpoint;
+
+public final class Configs {
+  /*
   public static final class MAXSwerveModule {
     public static final SparkFlexConfig drivingConfig = new SparkFlexConfig();
     public static final SparkMaxConfig turningConfig = new SparkMaxConfig();
 
+    
     static {
+
+      
       // Use module constants to calculate conversion factors and feed forward gain.
       double drivingFactor =
           ModuleConstants.kWheelDiameterMeters * Math.PI / ModuleConstants.kDrivingMotorReduction;
@@ -56,9 +60,11 @@ public final class REV_Configs {
           .positionWrappingEnabled(true)
           .positionWrappingInputRange(0, turningFactor);
     }
-  }
+  } 
+  */
 
   public static final class CoralSubsystem {
+
     public static final SparkMaxConfig armConfig = new SparkMaxConfig();
     public static final SparkFlexConfig elevatorConfig = new SparkFlexConfig();
     public static final SparkMaxConfig intakeConfig = new SparkMaxConfig();
@@ -115,7 +121,6 @@ public final class REV_Configs {
       // Configure basic settings of the intake motor
       intakeConfig.inverted(true).idleMode(IdleMode.kBrake).smartCurrentLimit(40);
     }
-  }
 
   public static final class AlgaeSubsystem {
     public static final SparkFlexConfig intakeConfig = new SparkFlexConfig();
@@ -140,5 +145,6 @@ public final class REV_Configs {
       // Configure basic settings of the intake motor
       intakeConfig.inverted(true).idleMode(IdleMode.kBrake).smartCurrentLimit(40);
     }
-  }
-}
+  } // end of AlgaeSubsystem
+
+} // 
