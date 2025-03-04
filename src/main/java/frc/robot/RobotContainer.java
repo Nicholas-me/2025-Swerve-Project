@@ -118,11 +118,6 @@ public class RobotContainer {
 
     } // end of configureBindings
 
-    // TODO Autonomously drive
-    // 1. Basic - you can add individual auto commands here and swap them out as
-    // needed
-    // 2. Intermediate - you can add an auto chooser here and select from a list of
-    // autos.
     public Command getAutonomousCommand() {
         return m_DriveForwardCommand;
     }
