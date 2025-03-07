@@ -20,9 +20,9 @@ import edu.wpi.first.math.util.Units;
 public final class Constants {
 
   public static final class CoralSubsystemConstants {
-    public static final int kElevatorMotorCanId = 4;
-    public static final int kArmMotorCanId = 3;
-    public static final int kIntakeMotorCanId = 2;
+    public static final int kElevatorMotorCanId = 5;
+    public static final int kArmMotorCanId = 2;
+    public static final int kIntakeMotorCanId = 3;
 
     public static final class ElevatorSetpoints {
       public static final int kFeederStation = 0;
@@ -47,10 +47,8 @@ public final class Constants {
   }
 
   public static final class AlgaeSubsystemConstants {
-
-    // FIXME Change this to the correct CAN ID
-    public static final int kPivotMotorCanId = 00; // <-- You will give this motor a unique number in Tuner X
-    public static final int kIntakeMotorCanId = 00; // FIXME Change this to the correct CAN ID
+    public static final int kIntakeMotorCanId = 6;
+    public static final int kPivotMotorCanId = 4;
 
     public static final class ArmSetpoints {
       public static final double kStow = 18.5;
@@ -64,8 +62,6 @@ public final class Constants {
       public static final double kHold = 0.25;
     }
   }
-
-  /* You don't need this because you are using CTRE Phoenix controlled motors
 
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
@@ -91,7 +87,6 @@ public final class Constants {
     public static final double kBackLeftChassisAngularOffset = Math.PI;
     public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
-    
     // SPARK MAX CAN IDs
     public static final int kFrontLeftDrivingCanId = 6;
     public static final int kRearLeftDrivingCanId = 12;
@@ -104,12 +99,7 @@ public final class Constants {
     public static final int kRearRightTurningCanId = 9;
 
     public static final boolean kGyroReversed = false;
-    
   }
-  */ 
-  
-
-  /* You don't need this because you are using CTRE Phoenix controlled motors
 
   public static final class ModuleConstants {
     // The MAXSwerve module can be configured with one of three pinion gears: 12T,
@@ -134,9 +124,7 @@ public final class Constants {
     public static final double kDriveDeadband = 0.1;
     public static final double kTriggerButtonThreshold = 0.2;
   }
-  */
 
-  /* 
   public static final class AutoConstants {
     public static final double kMaxSpeedMetersPerSecond = 3;
     public static final double kMaxAccelerationMetersPerSecondSquared = 3;
@@ -152,7 +140,6 @@ public final class Constants {
         new TrapezoidProfile.Constraints(
             kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
   }
-  */
 
   public static final class NeoMotorConstants {
     public static final double kFreeSpeedRpm = 5676;
