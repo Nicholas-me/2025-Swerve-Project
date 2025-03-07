@@ -19,6 +19,7 @@ import edu.wpi.first.math.util.Units;
  */
 public final class Constants {
 
+  /***** CORAL *******************/
   public static final class CoralSubsystemConstants {
     public static final int kElevatorMotorCanId = 5;
     public static final int kArmMotorCanId = 2;
@@ -46,6 +47,7 @@ public final class Constants {
     }
   }
 
+  /***** ALGAE *******************/
   public static final class AlgaeSubsystemConstants {
     public static final int kIntakeMotorCanId = 6;
     public static final int kPivotMotorCanId = 4;
@@ -63,6 +65,7 @@ public final class Constants {
     }
   }
 
+  /*
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
     // the robot, rather the allowed maximum speeds
@@ -100,7 +103,7 @@ public final class Constants {
 
     public static final boolean kGyroReversed = false;
   }
-
+ 
   public static final class ModuleConstants {
     // The MAXSwerve module can be configured with one of three pinion gears: 12T,
     // 13T, or 14T. This changes the drive speed of the module (a pinion gear with
@@ -123,7 +126,7 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
     public static final double kDriveDeadband = 0.1;
     public static final double kTriggerButtonThreshold = 0.2;
-  }
+ }
 
   public static final class AutoConstants {
     public static final double kMaxSpeedMetersPerSecond = 3;
@@ -144,7 +147,7 @@ public final class Constants {
   public static final class NeoMotorConstants {
     public static final double kFreeSpeedRpm = 5676;
   }
-
+*/
   public static final class SimulationRobotConstants {
     public static final double kPixelsPerMeter = 20;
 
