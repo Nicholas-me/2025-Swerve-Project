@@ -152,13 +152,8 @@ public class RobotContainer {
         // Right Bumper -> Run tube intake in reverse
         m_driverController.rightBumper().whileTrue(m_coralSubSystem.reverseIntakeCommand());
 
-        // B Button -> Elevator/Arm to human player position, set ball intake to stow
-        // when idle
-        m_operatorController
-            .b()
-            .onTrue(
-                m_coralSubSystem
-                    .setSetpointCommand(Setpoint.kFeederStation)
+        // B Button -> Elevator/Arm to human player position, set ball intake to stow when idle
+        m_operatorController.b().onTrue(m_coralSubSystem.setSetpointCommand(Setpoint.kFeederStation)
                     .alongWith(m_algaeSubsystem.stowCommand()));
 
         // A Button -> Elevator/Arm to level 2 position
@@ -172,12 +167,12 @@ public class RobotContainer {
 
         // Right Trigger -> Run ball intake, set to leave out when idle
         m_operatorController
-            .rightTrigger(OIConstants.kTriggerButtonThreshold)
+            .rightTrigger(Constants.kTriggerButtonThreshold)
             .whileTrue(m_algaeSubsystem.runIntakeCommand());
 
         // Left Trigger -> Run ball intake in reverse, set to stow when idle
         m_operatorController
-            .leftTrigger(OIConstants.kTriggerButtonThreshold)
+            .leftTrigger(Constants.kTriggerButtonThreshold)
             .whileTrue(m_algaeSubsystem.reverseIntakeCommand());
     } // end of configureBindings
 
