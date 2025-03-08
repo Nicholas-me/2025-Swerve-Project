@@ -80,10 +80,10 @@ public class RobotContainer {
         m_driverController.start().onTrue(drivetrain.runOnce(() -> drivetrain.seedFieldCentric()));
 
         // Left Bumper -> Run tube intake
-        m_driverController.leftBumper().whileTrue(m_coralSubSystem.runIntakeCommand());
+        m_operatorController.leftBumper().whileTrue(m_coralSubSystem.runIntakeCommand());
 
         // Right Bumper -> Run tube intake in reverse
-        m_driverController.rightBumper().whileTrue(m_coralSubSystem.reverseIntakeCommand());
+        m_operatorController.rightBumper().whileTrue(m_coralSubSystem.reverseIntakeCommand());
 
         /*** OPERATOR CONTROLS ***/
 
