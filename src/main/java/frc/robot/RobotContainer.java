@@ -90,12 +90,12 @@ public class RobotContainer {
         // B Button -> Elevator/Arm to human player position, set ball intake to stow when idle
         
         // Right Trigger -> Run ball intake, set to leave out when idle
-        m_operatorController
+        m_driverController
                 .rightTrigger(Constants.kTriggerButtonThreshold)
                 .whileTrue(m_algaeSubsystem.runIntakeCommand());
 
         // Left Trigger -> Run ball intake in reverse, set to stow when idle
-        m_operatorController
+        m_driverController
                 .leftTrigger(Constants.kTriggerButtonThreshold)
                 .whileTrue(m_algaeSubsystem.reverseIntakeCommand());
 

@@ -78,7 +78,7 @@ public final class Configs {
 
     static {
       // Configure basic setting of the arm motor
-      armConfig.smartCurrentLimit(40);
+      armConfig.smartCurrentLimit(-40);
 
       /*
        * Configure the closed loop controller. We want to make sure we set the
